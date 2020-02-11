@@ -1,0 +1,10 @@
+C:\Users\user\source\repos\ClothsStoreApi\ClothsStoreDatabase\bin\Debug\ClothsStoreDatabase.dacpac
+C:\Users\user\source\repos\ClothsStoreApi\ClothsStoreDatabase\bin\Debug\ClothsStoreDatabase.dll
+C:\Users\user\source\repos\ClothsStoreApi\ClothsStoreDatabase\bin\Debug\ClothsStoreDatabase.pdb
+C:\Users\user\source\repos\ClothsStoreApi\ClothsStoreDatabase\obj\Debug\ClothsStoreDatabase.sqlprojAssemblyReference.cache
+C:\Users\user\source\repos\ClothsStoreApi\ClothsStoreDatabase\obj\Debug\ClothsStoreDatabase.dll
+C:\Users\user\source\repos\ClothsStoreApi\ClothsStoreDatabase\obj\Debug\ClothsStoreDatabase.pdb
+C:\Users\user\source\repos\ClothsStoreApi\ClothsStoreDatabase\obj\Debug\Model.xml
+C:\Users\user\source\repos\ClothsStoreApi\ClothsStoreDatabase\obj\Debug\refactor.xml
+C:\Users\user\source\repos\ClothsStoreApi\ClothsStoreDatabase\obj\Debug\postdeploy.sql
+C:\Users\user\source\repos\ClothsStoreApi\ClothsStoreDatabase\obj\Debug\predeploy.sql
