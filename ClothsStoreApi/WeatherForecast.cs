@@ -1,6 +1,6 @@
 using System;
 
-namespace ClothsStoreApi
+namespace ClothsStore.Api
 {
     public class WeatherForecast
     {

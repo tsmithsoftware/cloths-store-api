@@ -3,3 +3,11 @@
 ################################################################################
 
 /ClothsStoreApi/bin/Debug/netcoreapp3.1
+/ClothsStoreApi/obj/Debug/netcoreapp3.1
+/ClothsStoreApi/obj
+/ClothsStoreBL/obj
+/ClothsStoreDAL/bin/Debug/netstandard2.0
+/ClothsStoreDAL/obj
+/ClothsStoreDatabase/bin/Debug
+/ClothsStoreDatabase/obj/Debug
+/ClothsStoreBL/bin/Debug/netstandard2.0

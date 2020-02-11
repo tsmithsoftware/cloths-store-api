@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ClothsStoreDAL
+namespace ClothsStore.DAL
 {
     public class Class1
     {

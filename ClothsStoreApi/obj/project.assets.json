@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\source\\repos\\ClothsStoreApi\\ClothsStoreApi\\ClothsStoreApi.csproj",
-      "projectName": "ClothsStoreApi",
-      "projectPath": "C:\\Users\\user\\source\\repos\\ClothsStoreApi\\ClothsStoreApi\\ClothsStoreApi.csproj",
+      "projectUniqueName": "C:\\Users\\user\\source\\repos\\ClothsStoreApi\\ClothsStoreApi\\ClothsStore.Api.csproj",
+      "projectName": "ClothsStore.Api",
+      "projectPath": "C:\\Users\\user\\source\\repos\\ClothsStoreApi\\ClothsStoreApi\\ClothsStore.Api.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\user\\source\\repos\\ClothsStoreApi\\ClothsStoreApi\\obj\\",
       "projectStyle": "PackageReference",
