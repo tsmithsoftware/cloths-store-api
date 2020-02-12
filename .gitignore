@@ -10,6 +10,7 @@
 /ClothsStoreDAL/obj/*
 /ClothsStore.DAL/bin/*
 /ClothsStore.DAL/obj/*
+/ClothsStore.DAL/obj/Debug/*
 /ClothsStoreDatabase/*
 /ClothsStoreBL/bin/*
 /.vs
