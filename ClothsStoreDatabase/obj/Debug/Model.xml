@@ -12,7 +12,7 @@
 		</CustomData>
 		<CustomData Category="Reference" Type="Assembly">
 			<Metadata Name="LogicalName" Value="ClothsStoreDatabase.dll" />
-			<Metadata Name="FileName" Value="C:\USERS\USER\SOURCE\REPOS\CLOTHSSTOREAPI\CLOTHSSTOREDATABASE\OBJ\DEBUG\CLOTHSSTOREDATABASE.DLL" />
+			<Metadata Name="FileName" Value="C:\USERS\LOCAL.ADMIN\SOURCE\REPOS\CLOTHS-STORE-API\CLOTHSSTOREDATABASE\OBJ\DEBUG\CLOTHSSTOREDATABASE.DLL" />
 			<Metadata Name="AssemblyName" Value="ClothsStoreDatabase" />
 			<Metadata Name="PermissionSet" Value="SAFE" />
 			<Metadata Name="Owner" Value="" />
@@ -20,7 +20,7 @@
 			<Metadata Name="IsVisible" Value="True" />
 			<Metadata Name="IsModelAware" Value="True" />
 			<Metadata Name="SkipCreationIfEmpty" Value="True" />
-			<Metadata Name="AssemblySymbolsName" Value="C:\Users\user\source\repos\ClothsStoreApi\ClothsStoreDatabase\obj\Debug\ClothsStoreDatabase.pdb" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\local.admin\Source\Repos\cloths-store-api\ClothsStoreDatabase\obj\Debug\ClothsStoreDatabase.pdb" />
 		</CustomData>
 		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
 	</Header>

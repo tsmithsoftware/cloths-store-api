@@ -6,10 +6,12 @@
 /ClothsStoreApi/obj/Debug/netcoreapp3.1
 /ClothsStoreApi/obj
 /ClothsStoreBL/obj
-/ClothsStoreDAL/bin/Debug/
+/ClothsStoreDAL/bin
 /ClothsStoreDAL/obj
+/ClothsStoreDatabase
 /ClothsStoreDatabase/bin/Debug
 /ClothsStoreDatabase/obj/Debug
+/ClothsStoreDatabase/obj
 /ClothsStoreBL/bin/Debug/netstandard2.0
 /.vs
 /ClothsStoreDAL_prev
