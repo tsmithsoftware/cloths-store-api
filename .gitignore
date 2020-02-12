@@ -11,6 +11,7 @@
 /ClothsStore.DAL/bin/*
 /ClothsStore.DAL/obj/*
 /ClothsStore.DAL/obj/Debug/*
+/ClothsStore.DAL/obj/Debug/netcoreapp3.1/*
 /ClothsStoreDatabase/*
 /ClothsStoreBL/bin/*
 /.vs
