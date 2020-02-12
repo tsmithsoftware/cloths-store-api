@@ -137,6 +137,18 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
         }
       },
+      "Microsoft.EntityFrameworkCore.Tools/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "3.1.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/_._": {}
+        }
+      },
       "Microsoft.Extensions.Caching.Abstractions/3.1.1": {
         "type": "package",
         "dependencies": {
@@ -1338,23 +1350,6 @@
         "runtime": {
           "bin/placeholder/ClothsStore.BL.dll": {}
         }
-      },
-      "ClothsStore.DAL/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "ClothsStore.BL": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "3.1.1",
-          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.1",
-          "Microsoft.Extensions.Configuration.FileExtensions": "3.1.1",
-          "Microsoft.Extensions.Configuration.Json": "3.1.1"
-        },
-        "compile": {
-          "bin/placeholder/ClothsStore.DAL.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ClothsStore.DAL.dll": {}
-        }
       }
     }
   },
@@ -1606,6 +1601,30 @@
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.SqlServer.xml",
         "microsoft.entityframeworkcore.sqlserver.3.1.1.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlserver.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Tools/3.1.1": {
+      "sha512": "rk6bBWIACTeEDFQnmslhPQYyVI4Qwy1k1XQ5NAwyZZ6Po6kGvyRs7n0tzb2M40m461vrebKhclLyR8VQYSuxig==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.tools/3.1.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netstandard2.0/_._",
+        "microsoft.entityframeworkcore.tools.3.1.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.tools.nuspec",
+        "tools/EntityFrameworkCore.PS2.psd1",
+        "tools/EntityFrameworkCore.PS2.psm1",
+        "tools/EntityFrameworkCore.psd1",
+        "tools/EntityFrameworkCore.psm1",
+        "tools/about_EntityFrameworkCore.help.txt",
+        "tools/init.ps1",
+        "tools/net461/any/ef.exe",
+        "tools/net461/win-x86/ef.exe",
+        "tools/netcoreapp2.0/any/ef.dll",
+        "tools/netcoreapp2.0/any/ef.runtimeconfig.json"
       ]
     },
     "Microsoft.Extensions.Caching.Abstractions/3.1.1": {
@@ -5120,17 +5139,17 @@
       "type": "project",
       "path": "../ClothsStoreBL/ClothsStore.BL.csproj",
       "msbuildProject": "../ClothsStoreBL/ClothsStore.BL.csproj"
-    },
-    "ClothsStore.DAL/1.0.0": {
-      "type": "project",
-      "path": "../ClothsStore.DAL/ClothsStore.DAL.csproj",
-      "msbuildProject": "../ClothsStore.DAL/ClothsStore.DAL.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "ClothsStore.DAL >= 1.0.0",
-      "Microsoft.EntityFrameworkCore.Design >= 3.1.1"
+      "ClothsStore.BL >= 1.0.0",
+      "Microsoft.EntityFrameworkCore >= 3.1.1",
+      "Microsoft.EntityFrameworkCore.Design >= 3.1.1",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.1",
+      "Microsoft.EntityFrameworkCore.Tools >= 3.1.1",
+      "Microsoft.Extensions.Configuration.FileExtensions >= 3.1.1",
+      "Microsoft.Extensions.Configuration.Json >= 3.1.1"
     ]
   },
   "packageFolders": {
@@ -5139,11 +5158,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\local.admin\\Source\\Repos\\cloths-store-api\\ClothsStoreApi\\ClothsStore.Api.csproj",
-      "projectName": "ClothsStore.Api",
-      "projectPath": "C:\\Users\\local.admin\\Source\\Repos\\cloths-store-api\\ClothsStoreApi\\ClothsStore.Api.csproj",
+      "projectUniqueName": "C:\\Users\\local.admin\\Source\\Repos\\cloths-store-api\\ClothsStore.DAL\\ClothsStore.DAL.csproj",
+      "projectName": "ClothsStore.DAL",
+      "projectPath": "C:\\Users\\local.admin\\Source\\Repos\\cloths-store-api\\ClothsStore.DAL\\ClothsStore.DAL.csproj",
       "packagesPath": "C:\\Users\\local.admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\local.admin\\Source\\Repos\\cloths-store-api\\ClothsStoreApi\\obj\\",
+      "outputPath": "C:\\Users\\local.admin\\Source\\Repos\\cloths-store-api\\ClothsStore.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\local.admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5159,8 +5178,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\local.admin\\Source\\Repos\\cloths-store-api\\ClothsStore.DAL\\ClothsStore.DAL.csproj": {
-              "projectPath": "C:\\Users\\local.admin\\Source\\Repos\\cloths-store-api\\ClothsStore.DAL\\ClothsStore.DAL.csproj"
+            "C:\\Users\\local.admin\\Source\\Repos\\cloths-store-api\\ClothsStoreBL\\ClothsStore.BL.csproj": {
+              "projectPath": "C:\\Users\\local.admin\\Source\\Repos\\cloths-store-api\\ClothsStoreBL\\ClothsStore.BL.csproj"
             }
           }
         }
@@ -5174,9 +5193,31 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[3.1.1, )"
+          },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
+            "target": "Package",
+            "version": "[3.1.1, )"
+          },
+          "Microsoft.EntityFrameworkCore.SqlServer": {
+            "target": "Package",
+            "version": "[3.1.1, )"
+          },
+          "Microsoft.EntityFrameworkCore.Tools": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[3.1.1, )"
+          },
+          "Microsoft.Extensions.Configuration.FileExtensions": {
+            "target": "Package",
+            "version": "[3.1.1, )"
+          },
+          "Microsoft.Extensions.Configuration.Json": {
             "target": "Package",
             "version": "[3.1.1, )"
           }
@@ -5192,9 +5233,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
