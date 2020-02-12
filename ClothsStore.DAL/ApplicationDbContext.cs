@@ -10,7 +10,7 @@ namespace ClothsStore.DAL
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
-        public virtual DbSet<CartItem> Users { get; set; }
-        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<CartItem> CartItem { get; set; }
+        public virtual DbSet<Product> Product { get; set; }
     }
 }
