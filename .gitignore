@@ -16,3 +16,4 @@
 /ClothsStoreBL/bin/*
 /.vs
 /ClothsStoreDAL_prev/*
+*.jfm
