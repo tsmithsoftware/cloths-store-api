@@ -2,16 +2,13 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/ClothsStoreApi/bin/Debug/netcoreapp3.1
-/ClothsStoreApi/obj/Debug/netcoreapp3.1
-/ClothsStoreApi/obj
-/ClothsStoreBL/obj
-/ClothsStoreDAL/bin
-/ClothsStoreDAL/obj
-/ClothsStoreDatabase
-/ClothsStoreDatabase/bin/Debug
-/ClothsStoreDatabase/obj/Debug
-/ClothsStoreDatabase/obj
-/ClothsStoreBL/bin/Debug/netstandard2.0
+/ClothsStoreApi/bin/*
+/ClothsStoreApi/obj/*
+/ClothsStoreApi/obj/*
+/ClothsStoreBL/obj/*
+/ClothsStoreDAL/bin/*
+/ClothsStoreDAL/obj/*
+/ClothsStoreDatabase/*
+/ClothsStoreBL/bin/*
 /.vs
-/ClothsStoreDAL_prev
+/ClothsStoreDAL_prev/*
