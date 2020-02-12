@@ -9,7 +9,7 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ClothsStore.Database", "Clo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClothsStore.BL", "ClothsStoreBL\ClothsStore.BL.csproj", "{8BB13ED0-8FD0-4411-9CAC-1239C19EE9B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothsStore.DAL", "ClothsStore.DAL\ClothsStore.DAL.csproj", "{0D018F31-FA8C-49D5-B47E-C5FE5435D34D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClothsStore.DAL", "ClothsStore.DAL\ClothsStore.DAL.csproj", "{0D018F31-FA8C-49D5-B47E-C5FE5435D34D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -20,6 +20,11 @@ BEGIN
     DELETE FROM [dbo].Product
 END
 
+IF (EXISTS(SELECT * FROM [dbo].[User]))
+BEGIN
+    DELETE FROM [dbo].[User]
+END
+
 BEGIN
 INSERT INTO [dbo].Product(name,category,price, oldPrice, stock) VALUES ('Shoes', 'Clothing', '£25', '£30', 15)
 INSERT INTO [dbo].Product(name,category,price, oldPrice, stock) VALUES ('Shirt', 'Clothing', '£25', '£30', 40)
@@ -29,4 +34,9 @@ INSERT INTO [dbo].Product(name,category,price, oldPrice, stock) VALUES ('Laptop'
 INSERT INTO [dbo].Product(name,category,price, oldPrice, stock) VALUES ('Phone', 'Electronics', '£25', '£30', 23)
 INSERT INTO [dbo].Product(name,category,price, oldPrice, stock) VALUES ('Carpet', 'Furnishings', '£25', '£30', 13)
 INSERT INTO [dbo].Product(name,category,price, oldPrice, stock) VALUES ('Chair', 'Furnishings', '£25', '£30', 5)
+END
+
+--909!
+BEGIN
+INSERT INTO [dbo].[User](Username, HashedPassword) VALUES ('admin','fUfIDYIiuZmO5RURMyPCPryTbfaudbfXiqKC+3bSAvg=')
 END

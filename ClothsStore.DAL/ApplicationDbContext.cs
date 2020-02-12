@@ -12,5 +12,6 @@ namespace ClothsStore.DAL
 
         public virtual DbSet<CartItem> CartItem { get; set; }
         public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<User> User { get; set; }
     }
 }
