@@ -8,6 +8,8 @@
 /ClothsStoreBL/obj/*
 /ClothsStoreDAL/bin/*
 /ClothsStoreDAL/obj/*
+/ClothsStore.DAL/bin/*
+/ClothsStore.DAL/obj/*
 /ClothsStoreDatabase/*
 /ClothsStoreBL/bin/*
 /.vs
