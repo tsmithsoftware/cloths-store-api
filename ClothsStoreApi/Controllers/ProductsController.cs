@@ -21,15 +21,13 @@ namespace ClothsStore.Api.Controllers
         public ProductsController(ApplicationDbContext context)
         {
             _context = context;
-            authManager = new AuthenticationManager(_context);
+            authManager = new AuthenticationManager();
         }
 
         // GET: api/Products
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
-            var myUser = new ClothsStore.BL.Models.User();
-            User testUser = authManager.AuthenticateUser(myUser);
             return await _context.Product.ToListAsync();
         }
 

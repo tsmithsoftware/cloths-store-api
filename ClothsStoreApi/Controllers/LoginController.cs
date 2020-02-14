@@ -25,28 +25,8 @@ namespace ClothsStore.Api.Controllers
         public LoginController(IConfiguration config, ApplicationDbContext context)
         {
             _config = config;
-            authManager = new AuthenticationManager(context);
+            authManager = new AuthenticationManager();
         }
-
-        /**[AllowAnonymous]
-        [HttpGet]
-        public IActionResult Login()
-        {
-            IActionResult response = Unauthorized();
-            var userLogged = new User();
-            userLogged.Username = "admin";
-            userLogged.HashedPassword = EncryptionManager.sha256("9Jacky009!");
-
-            var user = authManager.AuthenticateUser(userLogged);
-
-            if (user != null)
-            {
-                var tokenString = GenerateJsonWebToken(user);
-                response = Ok(new { token = tokenString });
-            }
-
-            return response;
-        }**/
 
         [AllowAnonymous]
         [HttpPost]
