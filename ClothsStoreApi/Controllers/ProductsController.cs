@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ClothsStore.BL.Models;
 using ClothsStore.DAL;
+using ClothsStore.Api.Services;
 
 namespace ClothsStore.Api.Controllers
 {
@@ -15,16 +16,20 @@ namespace ClothsStore.Api.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private AuthenticationManager authManager;
 
         public ProductsController(ApplicationDbContext context)
         {
             _context = context;
+            authManager = new AuthenticationManager(_context);
         }
 
         // GET: api/Products
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
+            var myUser = new ClothsStore.BL.Models.User();
+            User testUser = authManager.AuthenticateUser(myUser);
             return await _context.Product.ToListAsync();
         }
 
