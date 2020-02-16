@@ -36,5 +36,20 @@ namespace ClothsStore.Api.Services
             }
             return null;
         }
+
+        internal bool checkUserExists(string username)
+        {
+            var args = new String[] { "" };
+            using (var context = _ctxFactory.CreateDbContext(args))
+            {
+                var users = context.User.ToList<User>();
+                IEnumerable<User> filteringQuery =
+                    from usr in users
+                    where usr.Username.Trim() == username.Trim()
+                    select usr;
+
+                return filteringQuery.ToList().Count > 0;
+            }
+        }
     }
 }
