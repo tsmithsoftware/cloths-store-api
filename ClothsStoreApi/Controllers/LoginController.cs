@@ -37,28 +37,14 @@ namespace ClothsStore.Api.Controllers
 
             if (user != null)
             {
-                var tokenString = GenerateJsonWebToken(user);
+                var tokenString = JwtManager.GenerateToken(user.Username);
+
+                var claimsPrincipal = JwtManager.GetPrincipal(tokenString);
+
                 response = Ok(new { token = tokenString });
             }
 
             return response;
         }
-
-        private string GenerateJsonWebToken(User user)
-        {
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
-            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-
-            var token = new JwtSecurityToken(_config["Jwt:Issuer"],
-                _config["Jwt:Issuer"],
-                null,
-                expires: DateTime.Now.AddMinutes(120),
-                signingCredentials: credentials
-                );
-
-            return new JwtSecurityTokenHandler().WriteToken(token);
-        }
-
-        public String generateToken() { return ""; }
     }
 }

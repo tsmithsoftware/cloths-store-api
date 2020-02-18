@@ -16,7 +16,7 @@ namespace ClothsStore.Api.Services
         ///     var hmac = new HMACSHA256();
         ///     var key = Convert.ToBase64String(hmac.Key);
         /// </summary>
-        private const string Secret = "V1;7jW'Y_>}hY[PXtB.4`b`XbYxJa;#e2R7ayY%]km@]/Y^6OIiKwB<FB1lU_;D`y<pNw(y({@8_o><Y(Q6gaJFvPMvl#XP{#=`A?c/Yf*f#>Er^^Q2'hIqFdaY|g";
+        private const string Secret = "VExTb0FMaVJaQk56SUNRQzRMb3ByMUtORWFBTEpaWWtzS2hNRHZYOG5vZDk3ZDBtUCtHTFNIcFM3SExzNHJFc3ZOTHhnUGNNMU84TlhUYS9qVDA2NDdEOXhBSGowTnAwTldyVkptOW9aVCtrYkttVTVaVTJZOTA5VmVVaUdQTCtvUU9pZjd5c1RldWNmaGx4ZGtWZjZYRDM4Tlo2V1ZmSllyRXRDUEEwdWUwPQ==";
 
         public static string GenerateToken(string username, int expireMinutes = 20)
         {
@@ -40,6 +40,14 @@ namespace ClothsStore.Api.Services
             var token = tokenHandler.WriteToken(securityToken);
 
             return token;
+        }
+
+        internal static Task<bool> ValidateTokenAsync(string parameter)
+        {
+            Console.Write("Validating Token: " + parameter);
+            var principal = GetPrincipal(parameter);
+            Console.Write("principal:" + principal.Identity.Name);
+            return Task.FromResult(principal != null);
         }
 
         public static ClaimsPrincipal GetPrincipal(string token)
