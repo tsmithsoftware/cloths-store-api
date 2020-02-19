@@ -10,12 +10,13 @@ using ClothsStore.DAL;
 using ClothsStore.Api.Services;
 using Microsoft.AspNetCore.Authorization;
 using ClothsStore.Api.Filters;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace ClothsStore.Api.Controllers
 {
     [Route("[controller]")]
+    //[Authorize(AuthenticationSchemes =JwtBearerDefaults.AuthenticationScheme)] //works
     [Authorize]
-    //[TokenAuthenticate]
     [ApiController]
     public class ProductsController : ControllerBase
     {

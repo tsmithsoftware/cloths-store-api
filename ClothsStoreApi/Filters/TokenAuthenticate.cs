@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Security.Claims;
+using System.Security.Principal;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http.Filters;
@@ -48,8 +50,22 @@ namespace ClothsStore.Api.Filters
                 Boolean correctToken = await JwtManager.ValidateTokenAsync(authorization.Parameter);
                 if (!correctToken)
                     context.ErrorResult = new AuthenticationFailureResult("Invalid Token", request);
-    
-                await Task.FromResult(true);
+
+                var principal = JwtManager.GetPrincipal(authorization.Parameter);
+
+                /**List<Claim> claims = new List<Claim>()
+                {
+                    new Claim(ClaimTypes.Name, "Eddie Admin"),
+                    new Claim(ClaimTypes.Role, "Admin"),
+                    // new Claim(ClaimTypes.Role, "Delete"),
+                };
+
+                // create an identity with the valid claims.
+                ClaimsIdentity identity = new ClaimsIdentity(claims, "yourScheme");
+
+                // set the context principal.
+                context.Principal = new ClaimsPrincipal(new[] { identity });**/
+                await Task.FromResult(principal != null);
             }
             catch (Exception ex)
             {
@@ -59,7 +75,7 @@ namespace ClothsStore.Api.Filters
 
         public Task ChallengeAsync(HttpAuthenticationChallengeContext context, CancellationToken cancellationToken)
         {
-            return Task.FromResult(true);
+            return Task.FromResult(false);
         }
     }
 }
