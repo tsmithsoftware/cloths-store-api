@@ -53,18 +53,6 @@ namespace ClothsStore.Api.Filters
 
                 var principal = JwtManager.GetPrincipal(authorization.Parameter);
 
-                /**List<Claim> claims = new List<Claim>()
-                {
-                    new Claim(ClaimTypes.Name, "Eddie Admin"),
-                    new Claim(ClaimTypes.Role, "Admin"),
-                    // new Claim(ClaimTypes.Role, "Delete"),
-                };
-
-                // create an identity with the valid claims.
-                ClaimsIdentity identity = new ClaimsIdentity(claims, "yourScheme");
-
-                // set the context principal.
-                context.Principal = new ClaimsPrincipal(new[] { identity });**/
                 await Task.FromResult(principal != null);
             }
             catch (Exception ex)

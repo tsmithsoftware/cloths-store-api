@@ -54,7 +54,6 @@ namespace ClothsStore.Api
                         }
                     };
 
-                https://stackoverflow.com/questions/29754662/signatureverificationfailedexception-in-jwtauthforwebapi
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuer = false,
