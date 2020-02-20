@@ -8,10 +8,15 @@ using Microsoft.EntityFrameworkCore;
 using ClothsStore.BL.Models;
 using ClothsStore.DAL;
 using ClothsStore.Api.Services;
+using Microsoft.AspNetCore.Authorization;
+using ClothsStore.Api.Filters;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace ClothsStore.Api.Controllers
 {
     [Route("[controller]")]
+    //[Authorize(AuthenticationSchemes =JwtBearerDefaults.AuthenticationScheme)] //works
+    [Authorize]
     [ApiController]
     public class ProductsController : ControllerBase
     {
@@ -33,7 +38,7 @@ namespace ClothsStore.Api.Controllers
 
         // GET: api/Products/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProduct(long id)
+        public async Task<ActionResult<Product>> GetProduct(int id)
         {
             var product = await _context.Product.FindAsync(id);
 
