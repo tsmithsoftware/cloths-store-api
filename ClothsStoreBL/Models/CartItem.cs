@@ -6,7 +6,8 @@ namespace ClothsStore.BL.Models
 {
     public class CartItem
     {
-        public long id { get; set; }
-        public long productId { get; set; }
+        public int id { get; set; }
+        public Product product { get; set; }
+        public User user { get; set; }
     }
 }

@@ -1,7 +1,9 @@
 ﻿CREATE TABLE [dbo].[CartItem]
 (
-	[id] INT NOT NULL PRIMARY KEY, 
-    [productId] INT NOT NULL
+	[id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [productId] INT NOT NULL, 
+    [userId] INT NOT NULL, 
+    CONSTRAINT [FK_User_CartItem] FOREIGN KEY (userId) REFERENCES dbo.[User](id)
 )
 
 GO

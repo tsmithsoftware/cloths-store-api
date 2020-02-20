@@ -7,60 +7,53 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ClothsStore.BL.Models;
 using ClothsStore.DAL;
-using ClothsStore.Api.Services;
-using Microsoft.AspNetCore.Authorization;
-using ClothsStore.Api.Filters;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace ClothsStore.Api.Controllers
 {
-    [Route("[controller]")]
-    [Authorize]
+    [Route("api/[controller]")]
     [ApiController]
-    public class ProductsController : ControllerBase
+    public class CartController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        private AuthenticationManager authManager;
 
-        public ProductsController(ApplicationDbContext context)
+        public CartController(ApplicationDbContext context)
         {
             _context = context;
-            authManager = new AuthenticationManager();
         }
 
-        // GET: api/Products
+        // GET: api/Cart
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
+        public async Task<ActionResult<IEnumerable<CartItem>>> GetCartItem()
         {
-            return await _context.Product.ToListAsync();
+            return await _context.CartItem.ToListAsync();
         }
 
-        // GET: api/Products/5
+        // GET: api/Cart/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProduct(int id)
+        public async Task<ActionResult<CartItem>> GetCartItem(int id)
         {
-            var product = await _context.Product.FindAsync(id);
+            var cartItem = await _context.CartItem.FindAsync(id);
 
-            if (product == null)
+            if (cartItem == null)
             {
                 return NotFound();
             }
 
-            return product;
+            return cartItem;
         }
 
-        // PUT: api/Products/5
+        // PUT: api/Cart/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProduct(long id, Product product)
+        public async Task<IActionResult> PutCartItem(int id, CartItem cartItem)
         {
-            if (id != product.id)
+            if (id != cartItem.id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(product).State = EntityState.Modified;
+            _context.Entry(cartItem).State = EntityState.Modified;
 
             try
             {
@@ -68,7 +61,7 @@ namespace ClothsStore.Api.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ProductExists(id))
+                if (!CartItemExists(id))
                 {
                     return NotFound();
                 }
@@ -81,37 +74,37 @@ namespace ClothsStore.Api.Controllers
             return NoContent();
         }
 
-        // POST: api/Products
+        // POST: api/Cart
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<Product>> PostProduct(Product product)
+        public async Task<ActionResult<CartItem>> PostCartItem(CartItem cartItem)
         {
-            _context.Product.Add(product);
+            _context.CartItem.Add(cartItem);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetProduct", new { id = product.id }, product);
+            return CreatedAtAction("GetCartItem", new { id = cartItem.id }, cartItem);
         }
 
-        // DELETE: api/Products/5
+        // DELETE: api/Cart/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Product>> DeleteProduct(long id)
+        public async Task<ActionResult<CartItem>> DeleteCartItem(int id)
         {
-            var product = await _context.Product.FindAsync(id);
-            if (product == null)
+            var cartItem = await _context.CartItem.FindAsync(id);
+            if (cartItem == null)
             {
                 return NotFound();
             }
 
-            _context.Product.Remove(product);
+            _context.CartItem.Remove(cartItem);
             await _context.SaveChangesAsync();
 
-            return product;
+            return cartItem;
         }
 
-        private bool ProductExists(long id)
+        private bool CartItemExists(int id)
         {
-            return _context.Product.Any(e => e.id == id);
+            return _context.CartItem.Any(e => e.id == id);
         }
     }
 }
