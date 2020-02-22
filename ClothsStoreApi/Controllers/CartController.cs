@@ -7,10 +7,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ClothsStore.BL.Models;
 using ClothsStore.DAL;
+using Microsoft.AspNetCore.Authorization;
+using ClothsStore.Api.Services;
+using ClothsStore.Api.Models;
 
 namespace ClothsStore.Api.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class CartController : ControllerBase
     {
@@ -78,12 +82,23 @@ namespace ClothsStore.Api.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<CartItem>> PostCartItem(CartItem cartItem)
+        public async Task<ActionResult<CartItem>> PostCartItem(BuyRequest buyRequest)
         {
-            _context.CartItem.Add(cartItem);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetCartItem", new { id = cartItem.id }, cartItem);
+            var products = _context.Product.Where(x => x.id == buyRequest.productId);
+            var user = _context.User.FirstOrDefault();
+            if(products.FirstOrDefault() != null && user != null)
+            {
+                var product = products.First();
+                var cartItem = new CartItem()
+                {
+                    product = product,
+                    user = user
+                };
+                _context.CartItem.Add(cartItem);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("GetCartItem", new { id = cartItem.id }, cartItem);
+            }
+            return NotFound();
         }
 
         // DELETE: api/Cart/5
